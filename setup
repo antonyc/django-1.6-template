@@ -1,0 +1,28 @@
+#!/bin/bash
+
+IFS="$(printf '\n\t')"
+cd "$(dirname "$0")"
+
+SCRIPT_NAME="$(basename "$0")"
+
+echo -n 'New project name: '
+read new_project_name
+
+confirm_new_project_name='?'
+while [[ "${confirm_new_project_name}" != 'y' && "${confirm_new_project_name}" != 'n' ]] ; do
+    echo -en "\nAre you sure you want to name your project '${new_project_name}'? [y/n] "
+    read confirm_new_project_name
+done
+
+if [[ "${confirm_new_project_name}" == 'n' ]] ; then
+    echo -e "Exiting.\n"
+    exit 1
+fi
+
+# Rename text in files
+LANG=C find . -type f ! -name "${SCRIPT_NAME}"  -not -path "./.git*" -exec sed -i '' "s/mydjangoproject/${new_project_name}/" {} \;
+
+# Rename the config root directory
+mv mydjangoproject/ "${new_project_name}"
+
+echo -e "\nYou can delete this file now.\n\n"
