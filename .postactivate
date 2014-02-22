@@ -1,0 +1,6 @@
+set -v
+
+export SECRET_KEY=<replace with key generated with `fab generate_secret_key`>
+export DJANGO_SETTINGS_MODULE=mydjangoproject.settings.local
+
+set +v
