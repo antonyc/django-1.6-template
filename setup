@@ -19,7 +19,11 @@ if [[ "${confirm_new_project_name}" == 'n' ]] ; then
     exit 1
 fi
 
-# Rename text in files
+# Rename text in files; without LANG=C, sed assumes that files are encoded in
+# whatever encoding is specified in $LANG, aka 'en_CA.UTF-8'. The C encoding
+# treats all ASCII characters as themselves and non-ASCII characters as
+# literals.
+# See http://stackoverflow.com/questions/11287564/getting-sed-error-illegal-byte-sequence-in-bash
 LANG=C find . -type f ! -name "${SCRIPT_NAME}"  -not -path "./.git*" -exec sed -i '' "s/mydjangoproject/${new_project_name}/" {} \;
 
 # Rename the config root directory
