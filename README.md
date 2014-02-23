@@ -1,5 +1,10 @@
 # mydjangoproject
 
+This is a [project
+template](https://docs.djangoproject.com/en/1.6/ref/django-admin/#startproject-projectname-destination)
+for Django 1.6, ideal for a stack/workflow/environment setup that includes
+PostgreSQL, virtualenv/virtualenvwrapper, OS X, Fabric, and Heroku.
+
 
 ## Setup
 
