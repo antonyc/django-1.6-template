@@ -6,6 +6,22 @@ for Django 1.6, ideal for a stack/workflow/environment setup that includes
 PostgreSQL, virtualenv/virtualenvwrapper, OS X, Fabric, and Heroku.
 
 
+# Installation
+
+1. Create a root directory under `~/repos` or wherever you store your code
+
+1. Create a virtualenv and activate it
+
+1. Install Django with pip:
+
+        pip install django==1.6
+
+1. Create the project using this template from the zipball (note the `.` at the
+end of the command so that there won't be too many nested repositories):
+
+        django-admin.py startproject --template=https://github.com/ysim/django-1.6-template/archive/master.zip mydjangoproject .
+
+
 ## Setup
 
 * If you're on OS X >= 10.7, consider installing
@@ -13,7 +29,7 @@ PostgreSQL, virtualenv/virtualenvwrapper, OS X, Fabric, and Heroku.
 instructions](http://postgresapp.com/documentation) to (most importantly) add
 the `bin/` dir of the Postgres.app to your $PATH.
 
-* Create a virtualenv, activate it, and install the pip requirements:
+* With the virtualenv activated, install the requirements via pip:
 
         $ pip install -r requirements.txt
 
