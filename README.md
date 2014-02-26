@@ -26,6 +26,8 @@ end of the command so that there won't be too many nested repositories):
 
 ## Setup
 
+Be sure to go through this entire section before making your initial commit.
+
 * If you're on OS X >= 10.7, consider installing
 [Postgres.app](http://postgresapp.com/). Then follow [the
 instructions](http://postgresapp.com/documentation) to (most importantly) add
@@ -78,6 +80,8 @@ the `bin/` dir of the Postgres.app to your $PATH.
 
 * Optionally, specify a different port for the Django development server to
 run on in the `serve` task of the fabfile.
+
+* Append `.postactivate` to `.gitignore`.
 
 * Make the `setup` script executable, then execute it (it renames all instances
 of `mydjangoproject` to your new project name):
