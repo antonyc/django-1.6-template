@@ -21,6 +21,8 @@ end of the command so that there won't be too many nested repositories):
 
         django-admin.py startproject --template=https://github.com/ysim/django-1.6-template/archive/master.zip mydjangoproject .
 
+1. Remove this section once you're done with the next section (Setup).
+
 
 ## Setup
 
@@ -77,8 +79,11 @@ the `bin/` dir of the Postgres.app to your $PATH.
 * Optionally, specify a different port for the Django development server to
 run on in the `serve` task of the fabfile.
 
-* Run the `setup` script to rename all instances of `mydjangoproject` to your
-new project name.
+* Make the `setup` script executable, then execute it (it renames all instances
+of `mydjangoproject` to your new project name):
+
+        $ chmod +x setup
+        $ ./setup
 
 
 ## Run the development server
