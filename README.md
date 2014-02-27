@@ -6,7 +6,7 @@ for Django 1.6, ideal for a stack/workflow/environment setup that includes
 PostgreSQL, virtualenv/virtualenvwrapper, OS X, Fabric, and Heroku.
 
 
-# Installation
+## Installation
 
 1. Create a root directory under `~/repos` or wherever you store your code
 
