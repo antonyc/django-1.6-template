@@ -21,21 +21,39 @@ end of the command so that there won't be too many nested repositories):
 
         django-admin.py startproject --template=https://github.com/ysim/django-1.6-template/archive/master.zip mydjangoproject .
 
-1. Remove this section once you're done with the next section (Setup).
+1. Making sure that the virtualenv is activated, install requirements via pip:
+
+        $ pip install -r requirements.txt
+
+1. Remove this section from the README once you're done with it
 
 
-## Setup
+## Initial configuration
 
-Be sure to go through this entire section before making your initial commit.
+* Run `fab generate_secret_key` to, well, generate a secret key and modify
+`.postactivate` to reflect the new secret key.
+
+* Optionally, specify a different port for the Django development server to
+run on in the `serve` task of the fabfile.
+
+* Append `.postactivate` to `.gitignore`.
+
+* Make the `setup` script executable, then execute it (properly writes your
+new project name to the appropriate files):
+
+        $ chmod +x setup
+        $ ./setup
+
+* Remove this section as well as the setup script once it's (successfully) been
+executed
+
+
+## Project setup
 
 * If you're on OS X >= 10.7, consider installing
 [Postgres.app](http://postgresapp.com/). Then follow [the
 instructions](http://postgresapp.com/documentation) to (most importantly) add
 the `bin/` dir of the Postgres.app to your $PATH.
-
-* With the virtualenv activated, install the requirements via pip:
-
-        $ pip install -r requirements.txt
 
 * Create a new role, as well as the `_dev` and `_test` databases in Postgres:
 
@@ -74,20 +92,6 @@ the `bin/` dir of the Postgres.app to your $PATH.
         Installing custom SQL ...
         Installing indexes ...
         Installed 0 object(s) from 0 fixture(s)
-
-* Run `fab generate_secret_key` to, well, generate a secret key and modify
-`.postactivate` to reflect the new secret key.
-
-* Optionally, specify a different port for the Django development server to
-run on in the `serve` task of the fabfile.
-
-* Append `.postactivate` to `.gitignore`.
-
-* Make the `setup` script executable, then execute it (it renames all instances
-of `mydjangoproject` to your new project name):
-
-        $ chmod +x setup
-        $ ./setup
 
 
 ## Run the development server
