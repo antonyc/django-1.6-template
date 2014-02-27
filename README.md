@@ -38,6 +38,10 @@ run on in the `serve` task of the fabfile.
 
 * Append `.postactivate` to `.gitignore`.
 
+* Make `manage.py` executable:
+
+        $ chmod +x manage.py
+
 * Make the `setup` script executable, then execute it (properly writes your
 new project name to the appropriate files):
 
