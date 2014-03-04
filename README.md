@@ -98,6 +98,22 @@ the `bin/` dir of the Postgres.app to your $PATH.
         Installed 0 object(s) from 0 fixture(s)
 
 
+## Heroku setup
+
+1. Add Postgres: <https://devcenter.heroku.com/articles/heroku-postgresql>
+
+1. Add the following environment variables using `heroku config:add KEY=value`:
+
+    - `DJANGO_SETTINGS_MODULE`
+    - `SECRET_KEY`
+
+1. Make sure the app is up and running as expected with `heroku logs`.
+
+1. Sync the database tables and create a superuser:
+
+        $ heroku run python syncdb
+
+
 ## Run the development server
 
         $ fab serve
