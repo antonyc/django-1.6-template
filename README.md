@@ -116,7 +116,7 @@ the `bin/` dir of the Postgres.app to your $PATH.
 
 ## Run the development server
 
-        $ fab serve
+    $ fab serve
 
 
 ## Troubleshooting
