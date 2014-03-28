@@ -19,11 +19,13 @@ if [[ "${confirm_new_project_name}" == 'n' ]] ; then
     exit 1
 fi
 
-# Rename text in files; without LANG=C, sed assumes that files are encoded in
-# whatever encoding is specified in $LANG, aka 'en_CA.UTF-8'. The C encoding
-# treats all ASCII characters as themselves and non-ASCII characters as
-# literals.
-# See http://stackoverflow.com/questions/11287564/getting-sed-error-illegal-byte-sequence-in-bash
+# Rename all instances of `mydjangoproject` in the repo to $new_project_name,
+# excluding the .git/ directory (or Bad Things will happen).
+#
+# Note: Without LANG=C, sed assumes that files are encoded in whatever encoding
+# is specified in $LANG, aka 'en_CA.UTF-8'. The C encoding treats all ASCII
+# characters as themselves and non-ASCII characters as literals.
+# See http://stackoverflow.com/questions/11287564/
 LANG=C find . -type f ! -name "${SCRIPT_NAME}"  -not -path "./.git*" -exec sed -i '' "s/mydjangoproject/${new_project_name}/" {} \;
 
 # Rename the config root directory
