@@ -25,6 +25,10 @@ end of the command so that there won't be too many nested repositories):
 
         $ pip install -r requirements.txt
 
+1. If you'll be deploying to Heroku, also install the requirements for that:
+
+        $ pip install -r requirements-heroku.txt
+
 1. Remove this section from the README once you're done with it
 
 
