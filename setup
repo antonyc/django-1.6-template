@@ -31,10 +31,10 @@ LANG=C find . -type f ! -name "${SCRIPT_NAME}"  -not -path "./.git*" -exec sed -
 # Rename the config root directory
 mv mydjangoproject/ "${new_project_name}"
 
-echo 'Making manage.py executable.'
+echo -e "Making manage.py executable...\n"
 chmod +x manage.py
 
-echo 'Appending .postactivate to .gitignore.'
+echo -e "Appending .postactivate to .gitignore...\n"
 echo '.postactivate' >> .gitignore
 
 echo 'Done.'

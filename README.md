@@ -40,17 +40,17 @@ end of the command so that there won't be too many nested repositories):
 * Optionally, specify a different port for the Django development server to
 run on in the `serve` task of the fabfile.
 
-* Append `.postactivate` to `.gitignore`.
-
-* Make `manage.py` executable:
-
-        $ chmod +x manage.py
-
 * Make the `setup` script executable, then execute it (properly writes your
 new project name to the appropriate files):
 
         $ chmod +x setup
         $ ./setup
+
+    This script will:
+
+    - Properly write your new project name to the appropriate files
+    - Append `.postactivate` to `.gitignore`
+    - Make `manage.py` executable
 
 * Remove this section as well as the setup script once it's (successfully) been
 executed
