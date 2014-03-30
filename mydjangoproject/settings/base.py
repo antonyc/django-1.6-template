@@ -43,11 +43,11 @@ MEDIA_ROOT = os.path.join(CONFIG_ROOT, 'served/media/')
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
-    os.path.join(CONFIG_ROOT, 'static'),
+    os.path.join(PROJECT_ROOT, 'static'),
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(CONFIG_ROOT, 'templates'),
+    os.path.join(PROJECT_ROOT, 'templates'),
 )
 
 
