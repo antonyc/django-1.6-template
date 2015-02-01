@@ -171,7 +171,7 @@ You might encounter an error while installing psycopg2:
 To solve this, temporarily append the `bin/` folder under the Postgres
 application to your $PATH and re-run the pip install command, e.g.
 
-    PATH="$PATH:/Applications/Postgres93.app/Contents/MacOS/bin/" pip install psycopg2
+    PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin/" pip install psycopg2
 
 
 ## References
